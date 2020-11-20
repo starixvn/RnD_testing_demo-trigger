@@ -1,5 +1,4 @@
 test:
   stage: test
-  trigger:
-    project: roshan.nguyen1/ci-smoketest
-    strategy: depend
+  script: 
+    - echo "Testing"
