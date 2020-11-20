@@ -3,8 +3,7 @@ test:
   variables:
     ENVIRONMENT: Test
   script: 
-    - echo "Testing"
-  trigger:
-    project: roshan.nguyen1/ci-smoketest
+    - echo Testing
+  trigger: roshan.nguyen1/ci-smoketest
     
 
