@@ -1,4 +1,10 @@
 test:
   stage: test
+  variables:
+    ENVIRONMENT: Test
   script: 
     - echo "Testing"
+  trigger:
+    project: roshan.nguyen1/ci-smoketest
+    
+
