@@ -2,8 +2,4 @@ test:
   stage: test
   variables:
     ENVIRONMENT: Test
-  script: 
-    - echo Testing
   trigger: roshan.nguyen1/ci-smoketest
-    
-
