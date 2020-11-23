@@ -2,5 +2,5 @@ test:
   stage: test
   variables:
     ENVIRONMENT: SIT
-    PRODUCT: Mini_Sedie
+    PRODUCT: VipSedie
   trigger: roshan.nguyen1/ci-smoketest
