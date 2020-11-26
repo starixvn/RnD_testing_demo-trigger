@@ -2,5 +2,5 @@ test:
   stage: test
   variables:
     ENVIRONMENT: SIT
-    PRODUCT: ALL
+    PRODUCT: Sedie
   trigger: roshan.nguyen1/ci-smoketest
