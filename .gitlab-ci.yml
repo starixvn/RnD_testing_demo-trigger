@@ -3,4 +3,6 @@ test:
   variables:
     ENVIRONMENT: LOCAL
     PRODUCT: MiniSedie
-  trigger: roshan.nguyen1/ci-smoketest
+    when: on_failure
+  script:
+    - echo $ENVIRONMENT
