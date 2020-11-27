@@ -8,4 +8,4 @@ test:
 post:
   stage: .post
   script:
-    - echo {{ENVIRONMENT}}
+    - echo $ENVIRONMENT
