@@ -1,19 +1,14 @@
-test:
-  stage: test
-  variables:
-    ENVIRONMENT: LOCAL
-    PRODUCT: MiniSedie
-  script:    
-    - mkdir -p .ci_att
-    - echo "1" > .ci_att/MiniSedie
-  artifacts:
-    paths:
-      - .ci_att/
-  
-post:
-  stage: .post
-  variables:
-    PRODUCT: MiniSedie
+build:
+  stage: build
   script:
-    - if [[ $(cat .ci_att/MiniSedie)=="1"]]; then echo "$(cat .ci_att/MiniSedie) Mini Sedie"; fi
-    - echo "$PRODUCT"
+    - echo "sMiniSedie=passed" >> build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+      
+deploy:
+  stage: deploy
+  script:
+    - echo $sMiniSedie=passed
+  dependencies:
+    - build
