@@ -1,14 +1,6 @@
-build:
-  stage: build
-  script:
-    - echo "sMiniSedie=passed" >> build.env
-  artifacts:
-    reports:
-      dotenv: build.env
-      
-deploy:
-  stage: deploy
-  script:
-    - echo $sMiniSedie=passed
-  dependencies:
-    - build
+test:
+  stage: test
+  variables:
+    ENVIRONMENT: LOCAL
+    PRODUCT: MiniSedie
+  trigger: roshan.nguyen1/ci-smoketest
