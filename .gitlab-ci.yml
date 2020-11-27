@@ -15,5 +15,5 @@ post:
   variables:
     PRODUCT: MiniSedie
   script:
-    - if [[ $(cat .ci_att/MiniSedie)=="1")]]; then echo "$(cat .ci_att/MiniSedie) Mini Sedie"
+    - if [[ $(cat .ci_att/MiniSedie)=="1"]]; then echo "$(cat .ci_att/MiniSedie) Mini Sedie"
     - echo "$PRODUCT"
