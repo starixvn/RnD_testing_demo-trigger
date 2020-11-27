@@ -5,7 +5,8 @@ test:
     PRODUCT: MiniSedie
   script:
     - export ENVIRONMENT="SIT"
+    - echo "$ENVIRONMENT"
 post:
   stage: .post
   script:
-    - echo $ENVIRONMENT
+    - echo "$ENVIRONMENT"
