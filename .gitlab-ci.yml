@@ -3,12 +3,17 @@ test:
   variables:
     ENVIRONMENT: LOCAL
     PRODUCT: MiniSedie
-  script:
-    export ENVIRONMENT="SIT"
+  script:    
+    - mkdir -p .ci_att
+    - echo "1" > .ci_att/MiniSedie
+  artifacts:
+    paths:
+      - .ci_att/
+  
 post:
   stage: .post
   variables:
     PRODUCT: MiniSedie
   script:
-    - echo "$ENVIRONMENT"
+    - if [[ $(cat .ci_att/MiniSedie)=="1")]]; then echo "$(cat .ci_att/MiniSedie) Mini Sedie"
     - echo "$PRODUCT"
