@@ -3,6 +3,9 @@ test:
   variables:
     ENVIRONMENT: LOCAL
     PRODUCT: MiniSedie
-    when: on_failure
   script:
-    - echo $ENVIRONMENT
+    - export ENVIRONMENT="SIT"
+post:
+  stage: .post
+  script:
+    - echo {{ENVIRONMENT}}
