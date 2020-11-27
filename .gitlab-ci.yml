@@ -4,8 +4,7 @@ test:
     ENVIRONMENT: LOCAL
     PRODUCT: MiniSedie
   script:
-    - export ENVIRONMENT="SIT"
-    - echo "$ENVIRONMENT"
+    export ENVIRONMENT="SIT"
 post:
   stage: .post
   script:
