@@ -1,4 +1,4 @@
-build:
+build1:
   stage: build
   script:
     - echo "BUILD_VERSION=hello" >> build.env
@@ -6,11 +6,15 @@ build:
     reports:
       dotenv: build.env
     when: always
-    paths:
-        - ./
 
 
 deploy:
   stage: deploy
   script:
     - echo $BUILD_VERSION # => hello
+  dependencies: 
+    -  build1
+  artifacts:
+    paths:
+      - ./   
+    when: always
