@@ -1,3 +1,6 @@
+variables:
+  ENVIRONMENT : "1"
+
 build1:
   stage: build
   script:
