@@ -1,59 +1,6 @@
-variables:
-  ENVIRONMENT : LOCAL
-
-build1:
-  stage: build
-  script:
-    - echo "BUILD1_VERSION=hello1" >> build.env
-  artifacts:
-    reports:
-      dotenv: build.env
-    when: always
-build2:
-  stage: build
-  script:
-    - echo "BUILD2_VERSION=hello221" >> build.env
-  only:
-    variables:
-      - $ENVIRONMENT == "1"
-  artifacts:
-    reports:
-      dotenv: build.env
-    when: always
-
-build2:
-  stage: build
-  script:
-    - echo "BUILD2_VERSION=hello2" >> build.env
-  only:
-    variables:
-      - $ENVIRONMENT == "LOCAL"
-  artifacts:
-    reports:
-      dotenv: build.env
-    when: always
-build3:
-  stage: build
-  script:
-    - echo "BUILD3_VERSION=hello3" >> build.env
-  artifacts:
-    reports:
-      dotenv: build.env
-    when: always
-
-
-
-deploy:
-  stage: deploy
-  script:
-    - echo $BUILD1_VERSION # => hello
-    - echo $BUILD2_VERSION # => hello
-    - echo $BUILD3_VERSION # => hello
-  dependencies: 
-    -  build1
-    -  build2
-    -  build3
-  artifacts:
-    paths:
-      - ./   
-    when: always
+test:
+  stage: test
+  variables:
+    ENVIRONMENT: LOCAL
+    PRODUCT: ALL
+  trigger: roshan.nguyen1/ci-smoketest
