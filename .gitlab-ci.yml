@@ -14,5 +14,3 @@ deploy:
   stage: deploy
   script:
     - echo $BUILD_VERSION # => hello
-  dependencies:
-    - build
