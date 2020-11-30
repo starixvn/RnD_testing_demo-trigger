@@ -1,5 +1,5 @@
 variables:
-  ENVIRONMENT : 1
+  ENVIRONMENT : LOCAL
 
 build1:
   stage: build
