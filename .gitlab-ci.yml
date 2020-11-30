@@ -11,6 +11,10 @@ build2:
   stage: build
   script:
     - echo "BUILD2_VERSION=hello2" >> build.env
+  only:
+    variables:
+      - $ENVIRONMENT == "LOCAL" && $PRODUCT == "ALL"
+      - $ENVIRONMENT == "LOCAL" && $PRODUCT == "VipSedie"
   artifacts:
     reports:
       dotenv: build.env
