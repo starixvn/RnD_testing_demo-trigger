@@ -7,10 +7,7 @@ build:
       dotenv: build.env
     when: always
     paths:
-        - /builds/roshan.nguyen1/ci-smoketest/report/
-        - /builds/roshan.nguyen1/ci-smoketest/ScreenShot/*Failed*
-        - /builds/roshan.nguyen1/ci-smoketest/ScreenShot/*Partial*
-    expire_in: 1 day
+        - ./
 
 
 deploy:
