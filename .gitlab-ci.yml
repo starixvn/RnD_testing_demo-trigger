@@ -1,6 +1,21 @@
-test:
-  stage: test
-  variables:
-    ENVIRONMENT: LOCAL
-    PRODUCT: MiniSedie
-  trigger: roshan.nguyen1/ci-smoketest
+build:
+  stage: build
+  script:
+    - echo "BUILD_VERSION=hello" >> build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+    when: always
+    paths:
+        - /builds/roshan.nguyen1/ci-smoketest/report/
+        - /builds/roshan.nguyen1/ci-smoketest/ScreenShot/*Failed*
+        - /builds/roshan.nguyen1/ci-smoketest/ScreenShot/*Partial*
+    expire_in: 1 day
+
+
+deploy:
+  stage: deploy
+  script:
+    - echo $BUILD_VERSION # => hello
+  dependencies:
+    - build
