@@ -2,5 +2,13 @@ test:
   stage: test
   variables:
     ENVIRONMENT: LOCAL
-    PRODUCT: ALL
+    PRODUCT: Sedie
   trigger: roshan.nguyen1/ci-smoketest
+  
+test1:
+  stage: test
+  variables:
+    ENVIRONMENT: LOCAL
+    PRODUCT: MiniSedie
+  trigger: roshan.nguyen1/ci-smoketest
+
