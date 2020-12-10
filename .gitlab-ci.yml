@@ -1,7 +1,7 @@
 test:
   stage: test
   variables:
-    ENVIRONMENT: LOCAL
+    ENVIRONMENT: SIT
     PRODUCT: BIGSMALL
   trigger: roshan.nguyen1/ci-smoketest
  
