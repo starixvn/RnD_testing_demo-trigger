@@ -1,7 +1,7 @@
 test:
   stage: test
   variables:
-    ENVIRONMENT: LOCAL
+    ENVIRONMENT: SIT
     PRODUCT: ALL
   trigger: roshan.nguyen1/ci-smoketest
  
