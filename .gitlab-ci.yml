@@ -3,5 +3,5 @@ test:
   variables:
     ENVIRONMENT: LOCAL
     PRODUCT: SEDIE
-  trigger: roshan.nguyen1/ci-smoketest
+  trigger: rnd/testing/ci-smoketest
  
