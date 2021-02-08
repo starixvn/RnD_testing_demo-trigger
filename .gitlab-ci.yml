@@ -2,6 +2,6 @@ test:
   stage: test
   variables:
     ENVIRONMENT: LOCAL
-    PRODUCT: MINISEDIE
+    PRODUCT: ALL
   trigger: rnd/testing/ci-smoketest
  
