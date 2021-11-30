@@ -1,7 +1,23 @@
-test:
+image: 
+  name: git3.nexdev.net:5050/rnd/testing/qc-auto-image:master
+
+stages: 
+  - test
+  - cleanup
+
+login-test:
   stage: test
-  variables:
-    ENVIRONMENT: LOCAL
-    PRODUCT: ALL
-  trigger: rnd/testing/ci-smoketest
- 
+  tags:
+   - docker-automation-test
+  script:
+   - npm install
+   - npm run test
+
+cleanup_job:
+  stage: cleanup
+  tags:
+  - docker-automation-test
+  script:
+    - echo "Cleaning up"
+    - rm -rf "%CACHE_PATH%/%CI_PIPELINE_ID%"
+  when: always
